@@ -6,7 +6,7 @@ public class Main {
         String exercise = "Solution1190";
         Class clazz = Class.forName("com.zhou.exercise." + site + "." + exercise);
         Solution x = (Solution) clazz.getDeclaredConstructors()[0].newInstance();
-        x.exec(x.getDefaultInput());
+        x.exec();
         x.verify();
     }
 }

@@ -1,11 +1,13 @@
 package com.zhou.exercise;
 
 import java.util.Arrays;
-import java.util.function.Consumer;
 import java.util.function.Function;
 
 public abstract class Solution<T> {
 	protected T result;
+	public T exec() {
+		return exec(getDefaultInput());
+	}
     public T exec(Object[] args) {
         print("Input:");
         for(var arg: args) {
@@ -21,6 +23,14 @@ public abstract class Solution<T> {
         print(result);
         return result;
     }
+    public void verify() {
+    	verify(null);
+    }
+    public void verify(T expected) {
+    	expected = expected == null ? getDafaultResult() : expected;
+    	boolean res = expected.equals(result);
+    	print(res ? "OK" : "KO");
+    }
     private void print(Object obj) {
         if(obj.getClass().isArray()) {
             System.out.println(Arrays.toString((Object[]) obj));
@@ -28,11 +38,7 @@ public abstract class Solution<T> {
             System.out.println(obj);
         }
     }
-    public void verify() {
-    	boolean res = getDafaultResult().equals(result);
-    	print(res ? "OK" : "KO");
-    }
-    public abstract Object[] getDefaultInput();
-    public abstract T getDafaultResult();
-    public abstract Function<Object[], T> getFunc();
+    protected abstract Object[] getDefaultInput();
+    protected abstract T getDafaultResult();
+    protected abstract Function<Object[], T> getFunc();
 }

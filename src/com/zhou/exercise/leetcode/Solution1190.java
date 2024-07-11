@@ -7,25 +7,6 @@ import com.zhou.exercise.Solution;
 url: https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/
 */
 public class Solution1190 extends Solution<String> {
-
-	@Override
-	public Object[] getDefaultInput() {
-		// TODO Auto-generated method stub
-		return new Object[]{ "f(ul)ao(t(y)qbn)()sj" };
-	}
-
-	@Override
-	public Function<Object[], String> getFunc() {
-		// TODO Auto-generated method stub
-		return (args) -> reverseParentheses((String)args[0]);
-	}
-	
-	@Override
-	public String getDafaultResult() {
-		// TODO Auto-generated method stub
-		return "fluaonbqytsj";
-	}
-	
 	char[] chs;
     int i = 0;
     public String reverseParentheses(String s) {
@@ -86,5 +67,18 @@ public class Solution1190 extends Solution<String> {
         chs[i] = chs[j];
         chs[j] = t;
     }
+    @Override
+	protected Object[] getDefaultInput() {
+		return new Object[]{ "f(ul)ao(t(y)qbn)()sj" };
+	}
 
+	@Override
+	protected Function<Object[], String> getFunc() {
+		return (args) -> reverseParentheses((String)args[0]);
+	}
+	
+	@Override
+	protected String getDafaultResult() {
+		return "fluaonbqytsj";
+	}
 }
