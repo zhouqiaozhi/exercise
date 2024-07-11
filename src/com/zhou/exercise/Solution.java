@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 public abstract class Solution<T> {
+	protected T result;
     public T exec(Object[] args) {
         print("Input:");
         for(var arg: args) {
@@ -12,7 +13,7 @@ public abstract class Solution<T> {
         }
         print("---");
         long start = System.currentTimeMillis();
-        var result = getFunc().apply(args);
+        result = getFunc().apply(args);
         long end = System.currentTimeMillis();
         print("Use " + (end - start) + "ms to finish call");
         print("---");
@@ -27,6 +28,11 @@ public abstract class Solution<T> {
             System.out.println(obj);
         }
     }
+    public void verify() {
+    	boolean res = getDafaultResult().equals(result);
+    	print(res ? "OK" : "KO");
+    }
     public abstract Object[] getDefaultInput();
+    public abstract T getDafaultResult();
     public abstract Function<Object[], T> getFunc();
 }

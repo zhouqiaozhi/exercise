@@ -14,6 +14,12 @@ public class Solution1598 extends Solution<Integer> {
     public Object[] getDefaultInput() {
         return new Object[]{ new String[]{"d1/","d2/","../","d21/","./"} };
     }
+    
+    @Override
+	public Integer getDafaultResult() {
+		// TODO Auto-generated method stub
+		return 2;
+	}
 
     @Override
     public Function<Object[], Integer> getFunc() {
@@ -37,4 +43,5 @@ public class Solution1598 extends Solution<Integer> {
         }
         return q.size();
     }
+
 }
