@@ -32,10 +32,23 @@ public abstract class Solution<T> {
     	print(res ? "OK" : "KO");
     }
     private void print(Object obj) {
+    	print(obj, "");
+    }
+    
+    private void print(Object obj, String space) {
         if(obj.getClass().isArray()) {
-            System.out.println(Arrays.toString((Object[]) obj));
+        	var array = (Object[])obj;
+        	if(array[0].getClass().isArray()) {
+        		System.out.println(space + "[");
+        		for(var o: array) {
+        			print(o, space + " ");
+        		}
+            	System.out.println(space + "]");
+        	} else {
+        		System.out.println(space + Arrays.toString((Object[]) obj));
+        	}
         } else {
-            System.out.println(obj);
+            System.out.println(space + obj);
         }
     }
     protected abstract Object[] getDefaultInput();
