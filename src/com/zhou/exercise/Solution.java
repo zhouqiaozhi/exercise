@@ -28,7 +28,17 @@ public abstract class Solution<T> {
     }
     public void verify(T expected) {
     	expected = expected == null ? getDafaultResult() : expected;
-    	boolean res = expected.equals(result);
+        boolean res = true;
+        if(expected.getClass().isArray()) {
+            var ex = (Object[]) expected;
+            var re = (Object[]) result;
+            for(int i = 0; i < ex.length; i++) {
+                res = res && ex[i].equals(re[i]);
+            }
+        } else {
+            res = expected.equals(result);
+        }
+
     	print(res ? "OK" : "KO");
     }
     private void print(Object obj) {

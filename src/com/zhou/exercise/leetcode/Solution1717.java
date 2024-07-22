@@ -10,7 +10,7 @@ import com.zhou.exercise.Solution;
  */
 public class Solution1717 extends Solution<Integer> {
 	
-	public int maximumGain(String s, int x, int y) {
+	public Integer maximumGain(String s, int x, int y) {
 		// try queue/stack greed
         // aba is impossible
         return exec(s, x, y, 'b', 'a');
