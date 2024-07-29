@@ -2,6 +2,8 @@ package com.zhou.exercise;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+        // reminder
+        // btree: 1395
         String site = "leetcode";
         String exercise = "Solution1395";
         Class clazz = Class.forName("com.zhou.exercise." + site + "." + exercise);
