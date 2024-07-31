@@ -2,17 +2,13 @@ package com.zhou.exercise.leetcode;
 
 import com.zhou.exercise.Solution;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Semaphore;
 import java.util.function.Function;
-import java.util.function.IntConsumer;
 
 public class Solution1226 extends Solution<Boolean> {
     public Boolean test() throws InterruptedException {
         DiningPhilosophers diningPhilosophers = new DiningPhilosophers();
-        List<String> list = new ArrayList<>();
         var latch = new CountDownLatch(4);
         Runnable pickLeftFork = () -> {
 

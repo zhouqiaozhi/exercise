@@ -5,7 +5,6 @@ import com.zhou.exercise.Solution;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Semaphore;
 import java.util.function.Function;
-import java.util.function.IntConsumer;
 
 public class Solution1117 extends Solution<String> {
     public String test(String s) throws InterruptedException {

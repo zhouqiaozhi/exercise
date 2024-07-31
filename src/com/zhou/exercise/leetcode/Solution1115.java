@@ -5,11 +5,9 @@ import com.zhou.exercise.Solution;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class Solution1115 extends Solution<String> {
     List<String> q = new ArrayList<>();
